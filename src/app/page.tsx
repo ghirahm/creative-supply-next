@@ -25,7 +25,6 @@ import partner8 from '@/assets/partner-8.webp';
 import partner9 from '@/assets/partner-9.webp';
 import partner10 from '@/assets/partner-10.webp';
 import partner11 from '@/assets/partner-11.webp';
-import partner12 from '@/assets/partner-12.webp';
 
 const images = [content1, content2, content3, content4, content5, content6, content1, content2, content3, content4,];
 
