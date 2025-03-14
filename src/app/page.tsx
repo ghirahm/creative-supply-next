@@ -51,70 +51,14 @@ const cards = [
 
 const partners = [partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8, partner9, partner10, partner11];
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faHouse, faLocation } from "@fortawesome/free-solid-svg-icons";
-import { faDiscord, faDribbble, faFacebook, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import Hero from "@/components/Hero";
 
 export default function Home() {
+
     return (
-        <div className="bg-primary text-primary">
-            <nav className="fixed w-full flex justify-between items-center h-16 md:h-20 xl:h-24 bg-[var(--color-white)] z-40">
-                <ul className="flex items-center gap-5 xl:gap-10 ml-5 md:ml-16 text-lg font-bold">
-                    <li>
-                        <Image
-                            src={Logo}
-                            alt="Creative Supply"
-                            width={32}
-                            height={32}
-                            className="h-8 cursor-pointer transition-transform duration-300 hover:rotate-12"
-                        />
-                    </li>
-                    {['Home', 'Services', 'Our Works'].map((item) => (
-                        <li key={item} className="hover:text-[var(--color-black)] text-sm transform hover:-translate-y-1 transition duration-300">
-                            <a href={`#${item.toLowerCase().replace(' ', '-')}`}>{item}</a>
-                        </li>
-                    ))}
-                </ul>
-                <ul className="hidden xl:flex items-center gap-10 mr-16 text-lg font-bold">
-                    {['Contact', 'Projects', 'Join Us', 'About'].map((item) => (
-                        <li key={item} className="hover:text-[var(--color-black)] text-sm transform hover:-translate-y-1 transition duration-300">
-                            <a href={`#${item.toLowerCase().replace(' ', '-')}`}>{item}</a>
-                        </li>
-                    ))}
-                    <li>
-                        <button className="btn-style-one">
-                            <span className="btn-title text-sm">Our Partner</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-
-            <main className="pt-16">
-                <section className="flex flex-col h-screen w-full items-center justify-between bg-[var(--color-primary)] rounded-b-2xl md:rounded-b-[10rem] relative overflow-hidden py-12">
-                    <div className="flex flex-col items-center">
-                        <div className="w-fit border rounded-full py-2 px-4 mt-5 xl:mt-16 border-[var(--color-white)]">
-                            <h2 className="text-[var(--color-white)] ">Creative Supply</h2>
-                        </div>
-                        <h1 className="text-[var(--color-white)] font-bold text-4xl md:text-6xl xl:text-8xl text-center mt-8">
-                            We Supply Your<br />Creative Needs
-                        </h1>
-                    </div>
-                    <Image
-                        src={KOL}
-                        alt="Welcome KOL"
-                        className="absolute bottom-[-20px] h-[65%] w-auto transition-transform duration-300 hover:translate-y-12"
-                    />
-                    <div className="flex flex-row w-fit gap-[10px] z-30 bg-[var(--color-white)] rounded-full xl:p-6 md:p-4 p-6">
-                        <button className="btn-style-one rounded-full">
-                            <span className="btn-title">Be Our Partner</span>
-                        </button>
-                        <button className="border border-[var(--text-secondary)] sm:border-[var(--text-primary)] rounded-full py-[10px] px-[20px] text-[var(--text-tertiary)] font-bold flex items-center">
-                            <h2 className="font-bold transform hover:mr-[7px] ease-in-out duration-300 transition-all">More Projects</h2>
-                            <FontAwesomeIcon icon={faArrowRight} className="ml-[6px] size-6"></FontAwesomeIcon>
-                        </button>
-                    </div>
-                </section>
-
+        <div className="bg-[var(--color-white)] text-[var(--color-black)]">
+            <main className="pt-2">
+                <Hero />
                 <section id="our-works" className="my-24 h-fit w-full text-[var(--color-black)]">
                     <div className="flex flex-col items-center gap-12">
                         <div className="flex flex-col lg:flex-row w-[80%] items-center justify-between gap-6">
@@ -176,75 +120,6 @@ export default function Home() {
                     </ul>
                 </section>
             </main>
-            <footer className="bg-[var(--color-primary)]">
-                <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-12">
-                    <div className="md:flex md:justify-between">
-                        <div className="mb-6 md:mb-0">
-                            <a href="#" className="flex flex-col gap-2 items-start justify-start">
-                                {/* <Image src={Logo} alt="Creative Supply Logo" width={32} height={32} className="h-8 me-3" /> */}
-                                <h2 className="text-2xl text-[var(--color-white)] font-bold whitespace-nowrap">PT Kreatif Suplai Indonesia</h2>
-                                <p className="mt-4 text-sm font-light text-balance text-[var(--color-white)] flex flex-row gap-2 items-center"><FontAwesomeIcon icon={faHouse} className="size-4" />
-                                    Jl Bintara Raya No 23, Kelurahan Jakasampurna, Kecamatan Bekasi Barat, Kota Bekasi, Jawa Barat
-                                </p>
-                                <p className="mt-4 text-sm font-light text-balance text-[var(--color-white)] flex flex-row gap-2 items-center"><FontAwesomeIcon icon={faLocation} className="size-4" />
-                                    Blok BE2 No.1, Jl. Kelapa Hibrida 7, Pondok Kelapa, Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta
-                                </p>
-                            </a>
-                        </div>
-                        <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                            {[
-                                {
-                                    title: 'Products',
-                                    category: ['Creative Supply', 'CS People', 'CS Works'],
-                                    links: ['https://www.instagram.com/creativesupply.id/', 'https://www.instagram.com/cspeople.id/', 'https://www.instagram.com/csworks.id/']
-                                },
-                                {
-                                    title: 'Follow Us',
-                                    category: ['Tiktok', 'Instagram'],
-                                    links: ['https://www.tiktok.com/@creativesupply.id', 'https://www.instagram.com/creativesupply.id/']
-                                },
-                                {
-                                    title: 'Legal',
-                                    category: ['Privacy Policy', 'Terms & Conditions'],
-                                    links: ['https://www.instagram.com/creativesupply.id/', 'https://www.instagram.com/creativesupply.id/']
-                                }
-                            ].map((section) => (
-                                <div key={section.title}>
-                                    <h2 className="mb-6 text-md font-bold text-[var(--color-white)]">{section.title}</h2>
-                                    <ul className="text-[var(--color-white)] text-sm font-semibold">
-                                        {section.category.map((item, index) => (
-                                            <li key={item} className="mb-4">
-                                                <a href={section.links[index]} className="transition-all duration-150 hover:translate-y-2">{item}</a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <hr className="my-6 border-[var(--color-white)] sm:mx-auto lg:my-8" />
-                    <div className="sm:flex sm:items-center sm:justify-between">
-                        <span className="text-sm text-[var(--color-white)] sm:text-center">
-                            © 2023 <a href="#" className="hover:underline">Creative Supply</a>
-                        </span>
-                        <div className="flex mt-4 sm:justify-center sm:mt-0">
-                            {[
-                                { name: faFacebook, label: 'Facebook' },
-                                { name: faDiscord, label: 'Discord' },
-                                { name: faTwitter, label: 'Twitter' },
-                                { name: faGithub, label: 'Github' },
-                                { name: faDribbble, label: 'Dribbble' }
-                            ].map((icon) => (
-                                <a href="#" key={icon.label} className="text-[var(--color-white)] hover:text-[var(--color-white)] ms-5">
-                                    <FontAwesomeIcon icon={icon.name} className="w-4 h-4" />
-                                    <span className="sr-only">{icon.label} Page</span>
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }
