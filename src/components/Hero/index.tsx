@@ -44,36 +44,31 @@ export default function Hero() {
     const nextIndex = (currentIndex + 1) % images.length;
 
     return (
-        <section className="flex flex-col h-screen w-full items-center justify-between bg-[var(--color-primary)] rounded-b-2xl md:rounded-b-[10rem] relative overflow-hidden py-12">
+        <section className="flex flex-col w-full items-center justify-between bg-[var(--color-primary)] rounded-b-2xl md:rounded-b-[10rem] relative overflow-hidden py-12 h-[500vh] ">
             <div className="flex flex-col items-center">
                 <Overline text="Creative Supply" />
                 <h1 className="text-[var(--color-white)] font-bold text-4xl md:text-6xl xl:text-8xl text-center mt-8">
                     We Supply Your<br />Creative Needs
                 </h1>
             </div>
-            <div className='absolute grid grid-cols-3 gap-4 -bottom-12 h-[65%] w-full items-center'>
-                <div className='h-full flex justify-center'>
-                    <Image
-                        src={images[prevIndex]}
-                        alt={`Welcome KOL`}
-                        className="transition-transform h-full duration-300 hover:translate-y-12 object-contain"
-                    />
-                </div>
-                <div className='h-full flex justify-center'>
-                    <Image
-                        src={images[currentIndex]}
-                        alt={`Welcome KOL`}
-                        className="transition-transform h-full duration-300 hover:translate-y-12 object-contain"
-                    />
-                </div>
-                <div className='h-full flex justify-center'>
-                    <Image
-                        src={images[nextIndex]}
-                        alt={`Welcome KOL`}
-                        className="transition-transform h-full duration-300 hover:translate-y-12 object-contain"
-                    />
-                </div>
+            <div className="absolute grid grid-cols-3 gap-4 h-[80%] bottom-0 w-full items-end">
+                {[prevIndex, currentIndex, nextIndex].map((index, i) => (
+                    <div
+                        key={index}
+                        className={`relative flex justify-center items-end mx-auto ${i === 1 ? "w-full h-full" : "w-2/3 h-2/3"
+                            }`}
+                    >
+                        <Image
+                            src={images[index]}
+                            alt="Welcome KOL"
+                            fill
+                            className="transition-transform duration-300 hover:translate-y-12 object-contain object-bottom z-30"
+                        />
+                    </div>
+                ))}
             </div>
+            {/* Circle Background */}
+            <div className="absolute w-[720px] h-[720px] bg-[var(--color-secondary)] rounded-full z-10 -bottom-56"></div>
             <button
                 onClick={prevImage}
                 className="absolute top-1/2 left-4 transform -translate-y-1/2 z-50 bg-white p-4 text-xl font-bold rounded-full shadow-lg hover:bg-gray-200"
