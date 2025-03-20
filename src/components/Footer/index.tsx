@@ -4,7 +4,7 @@
 // Import Icon Libraries
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faLocation } from "@fortawesome/free-solid-svg-icons";
-import { faDiscord, faDribbble, faFacebook, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+
 
 
 export default function Footer() {
@@ -62,18 +62,7 @@ export default function Footer() {
                         © 2023 <a href="#" className="hover:underline">Creative Supply</a>
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
-                        {[
-                            { name: faFacebook, label: 'Facebook' },
-                            { name: faDiscord, label: 'Discord' },
-                            { name: faTwitter, label: 'Twitter' },
-                            { name: faGithub, label: 'Github' },
-                            { name: faDribbble, label: 'Dribbble' }
-                        ].map((icon) => (
-                            <a href="#" key={icon.label} className="text-[var(--color-white)] hover:text-[var(--color-white)] ms-5">
-                                <FontAwesomeIcon icon={icon.name} className="w-4 h-4" />
-                                <span className="sr-only">{icon.label} Page</span>
-                            </a>
-                        ))}
+
                     </div>
                 </div>
             </div>
