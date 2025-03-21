@@ -119,7 +119,7 @@ export default function Hero() {
 
                         {/* Button Reveal */}
                         <motion.div initial="hidden" animate="visible" variants={reveal}>
-                            <ButtonThree text="Click to Discover" />
+                            <ButtonThree text="Click to Discover the Magic" />
                         </motion.div>
                     </motion.div>
                 </motion.div>

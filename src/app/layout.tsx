@@ -45,7 +45,7 @@ export default function RootLayout({
                 {/* <SplashCursor /> */}
                 <Header />
                 {children}
-                {/* <Footer /> */}
+                <Footer />
             </body>
         </html>
     );

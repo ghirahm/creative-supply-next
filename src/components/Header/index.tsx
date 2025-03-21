@@ -10,6 +10,7 @@ import { ButtonOne } from "../Button";
 
 // Import Motion
 import { useAnimation, motion, useScroll } from "framer-motion";
+import Link from "next/link";
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +45,7 @@ export default function Header() {
                 animate={controls}
                 className="w-full mx-auto lg:w-full flex justify-between rounded-full px-2 py-2 relative bg-[var(--color-primary)]">
                 <ul className="flex items-center gap-5 xl:gap-10 ml-5 md:ml-16 text-lg">
-                    <li onMouseEnter={playSound}>
+                    <Link onMouseEnter={playSound} href="/">
                         <Image
                             src={Logo}
                             alt="Creative Supply"
@@ -52,36 +53,38 @@ export default function Header() {
                             height={32}
                             className="h-8 cursor-pointer transition-transform duration-300 hover:rotate-36"
                         />
-                    </li>
-                    {['Home', 'Services', 'Our Works'].map((item) => (
-                        <li
+                    </Link>
+                    {['Service', 'Projects'].map((item) => (
+                        <Link
                             key={item}
                             className="cursor-pointer overflow-hidden h-6"
                             onMouseEnter={playSound}
+                            href={`/${item.toLowerCase()}`}
                         >
                             <div className="relative h-12 w-full flex flex-col items-center transition-transform duration-300 ease-in-out hover:-translate-y-6 text-sm">
                                 <p className="h-6 flex items-center justify-center w-full">{item}</p>
                                 <p className="h-6 flex items-center justify-center w-full">{item}</p>
                             </div>
-                        </li>
+                        </Link>
                     ))}
                 </ul>
                 <ul className="hidden xl:flex items-center gap-10 mr-16 text-lg">
-                    {['Contact', 'Projects', 'Join Us', 'About'].map((item) => (
-                        <li
+                    {['Career', 'About'].map((item) => (
+                        <Link
                             key={item}
                             className="cursor-pointer overflow-hidden h-6"
                             onMouseEnter={playSound}
+                            href={`/${item.toLowerCase()}`}
                         >
                             <div className="relative h-12 w-full flex flex-col items-center transition-transform duration-300 ease-in-out hover:-translate-y-6 text-sm">
                                 <p className="h-6 flex items-center justify-center w-full">{item}</p>
                                 <p className="h-6 flex items-center justify-center w-full">{item}</p>
                             </div>
-                        </li>
+                        </Link>
                     ))}
-                    <li onMouseEnter={playSound}>
+                    <Link onMouseEnter={playSound} href={'/contact'}>
                         <ButtonOne text="Be Our Partner" />
-                    </li>
+                    </Link>
                 </ul>
             </motion.nav>
         </header>
