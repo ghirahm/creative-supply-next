@@ -101,20 +101,32 @@ export default function Hero() {
                                 direction="top"
                                 className="text-[var(--color-white)] font-extrabold text-4xl md:text-6xl xl:text-9xl text-center mt-8 uppercase"
                             />
-                            <Image
-                                width={48}
-                                height={48}
-                                src={Element3}
-                                alt='Element'
-                                className='absolute top-12 right-[383px] transform'
-                            />
-                            <Image
-                                width={48}
-                                height={48}
-                                src={Element3}
-                                alt='Element'
-                                className='absolute bottom-16 left-[295px] transform'
-                            />
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }} n
+                            >
+                                <Image
+                                    width={48}
+                                    height={48}
+                                    src={Element3}
+                                    alt='Element'
+                                    className='absolute top-12 right-[383px] transform'
+                                />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+                            >
+                                <Image
+                                    width={48}
+                                    height={48}
+                                    src={Element3}
+                                    alt='Element'
+                                    className='absolute bottom-16 left-[295px] transform'
+                                />
+                            </motion.div>
                         </div>
 
                         {/* Button Reveal */}
